@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ defines class to json function """
-from json import dumps
 
 
 def class_to_json(obj):
