@@ -75,4 +75,27 @@ class Rectangle(Base):
             print(" " * self.x + "#" * self.width)
 
     def __str__(self):
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} -  {self.width}/{self.height}"
+
+    def update(self, *args, **kwargs):
+        if args and len(args) != 0:
+            for i, arg in enumerate(args):
+                if arg is None:
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    setattr(self, ["id", "width", "height", "x", "y"][i], arg)
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if v is None:
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    setattr(self, k, v)
+
+    def to_dictionary(self):
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
