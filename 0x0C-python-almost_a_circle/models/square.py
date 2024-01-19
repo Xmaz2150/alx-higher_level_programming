@@ -16,3 +16,29 @@ class Square(Rectangle):
         str_wh = "{}/{}".format(self.width, self.height)
 
         return str_square + str_id + str_xy + str_wh
+
+    @property
+    def size(self):
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        self.width = value
+        self.height = value
+
+    def update(self, *args, **kwargs):
+        if args is not None and len(args) != 0:
+            atr_list = ['id', 'size', 'x', 'y']
+            for i in range(len(args)):
+                if atr_list[i] == 'size':
+                    setattr(self, 'width', args[i])
+                    setattr(self, 'height', args[i])
+                else:
+                    setattr(self, atr_list[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key == 'size':
+                    setattr(self, 'width', value)
+                    setattr(self, 'height', value)
+                else:
+                    setattr(self, key, value)
