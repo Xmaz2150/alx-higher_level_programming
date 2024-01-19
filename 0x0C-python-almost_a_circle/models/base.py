@@ -42,3 +42,9 @@ class Base:
 
         with open(filename, "w") as file:
             file.write(json_data)
+
+    @staticmethod
+    def from_json_string(json_string):
+        if not json_string:
+            return []
+        return json.loads(json_string)
