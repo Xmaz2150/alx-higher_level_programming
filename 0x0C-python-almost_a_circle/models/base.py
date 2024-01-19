@@ -17,20 +17,24 @@ class Base:
 
     @classmethod
     def get_obj_no(cls):
+        """ no obj getter """
         return cls.__nb_objects
 
     @classmethod
     def inc_obj_no(cls, n):
+        """ no obj setter """
         cls.__nb_objects += n
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """ to json """
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """ save to jason file """
         filename = f"{cls.__name__}.json"
 
         data = []
@@ -44,7 +48,8 @@ class Base:
             file.write(json_data)
 
     @staticmethod
-    def from_json_string(json_string):
+    def from_json_string(json_string)
+        """ obj from json str """
         if not json_string:
             return []
         return json.loads(json_string)
