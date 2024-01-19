@@ -7,9 +7,11 @@ class Square(Rectangle):
     """ square class """
 
     def __init__(self, size, x=0, y=0, id=None):
+        """ instance initializer """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """ str repr of square """
         str_square = "[Square] "
         str_id = "({}) ".format(self.id)
         str_xy = "{}/{} - ".format(self.x, self.y)
@@ -19,14 +21,17 @@ class Square(Rectangle):
 
     @property
     def size(self):
+        """ size getter """
         return self.width
 
     @size.setter
     def size(self, value):
+        """ size setter """
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
+        """ instance updator """
         if args is not None and len(args) != 0:
             atr_list = ['id', 'size', 'x', 'y']
             for i in range(len(args)):
