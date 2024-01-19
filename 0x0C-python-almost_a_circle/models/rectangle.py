@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """ Base subclass """
 from models.base import Base
 
@@ -21,7 +20,7 @@ class Rectangle(Base):
             self.id = self.get_obj_no()
 
     @property
-    def width(self)
+    def width(self):
         """ width getter """
         return self.__width
 
@@ -35,12 +34,12 @@ class Rectangle(Base):
         self.__width = value
 
     @property
-    def height(self)
+    def height(self):
         """ height getter """
         return self.__height
 
     @height.setter
-    def height(self, value)
+    def height(self, value):
         """ height setter """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -68,7 +67,7 @@ class Rectangle(Base):
         return self.__y
 
     @y.setter
-    def y(self, value)
+    def y(self, value):
         """ y setter """
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
@@ -76,7 +75,7 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-    def area(self)
+    def area(self):
         """ area of rect """
         return self.width * self.height
 
