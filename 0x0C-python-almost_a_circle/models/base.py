@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ Class module """
+import json
 
 
 class Base:
@@ -21,3 +22,9 @@ class Base:
     @classmethod
     def inc_obj_no(cls, n):
         cls.__nb_objects += n
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
+        return json.dumps(list_dictionaries)
