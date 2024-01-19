@@ -1,7 +1,11 @@
+#!/usr/bin/python3
+""" base test module """
 import unittest
 from models.base import Base
 
+
 class TestBase(unittest.TestCase):
+    """ test cases for base class """
 
     def test_auto_id_assignment(self):
         base1 = Base()

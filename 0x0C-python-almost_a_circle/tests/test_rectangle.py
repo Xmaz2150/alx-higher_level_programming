@@ -1,7 +1,11 @@
+#!/usr/bin/python3
+""" rectangle test module """
 import unittest
 from models.rectangle import Rectangle
 
+
 class TestRectangle(unittest.TestCase):
+    """ rectangle test case class """
 
     def test_constructor(self):
         rectangle = Rectangle(5, 4)
