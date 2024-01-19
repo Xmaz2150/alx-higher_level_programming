@@ -87,7 +87,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """ str repr of class """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} -  {self.width}/{self.height}"
+        str1 = f"[Rectangle] ({self.id}) {self.x}/{self.y} -"
+        str2 = f"  {self.width}/{self.height}"
+        return str1 + str2
 
     def update(self, *args, **kwargs):
         """ instance updator """
