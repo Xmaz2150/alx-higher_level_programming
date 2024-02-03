@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """Defines a name-printing function"""
 
-def say_my_name(first_name, last_name= ""):
+
+def say_my_name(first_name, last_name=""):
     """
     Prints the provided first and last name, introducing it as "My name is".
 
