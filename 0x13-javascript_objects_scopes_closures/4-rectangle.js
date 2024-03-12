@@ -10,10 +10,14 @@ class Rectangle {
     }
   }
 
-  print () {
+  print (c) {
     for (let i = 0; i < this.height; i++) {
       for (let j = 0; j < this.width; j++) {
-        process.stdout.write('X');
+        if (!c) {
+          process.stdout.write('X');
+        } else {
+          process.stdout.write(c);
+        }
       }
       console.log('');
     }
