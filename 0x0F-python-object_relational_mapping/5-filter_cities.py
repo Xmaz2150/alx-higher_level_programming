@@ -39,11 +39,10 @@ if __name__ == '__main__':
         c.execute(query)
         rows = c.fetchall()
 
-        for i in range(len(rows)):
-            if i < len(rows) - 1:
-                print("{}".format(rows[i][1]), end=", ")
-            else:
-                print("{}".format(rows[i][1]))
+        cities = []
+        for row in rows:
+            cities.append(row[1])
+        print(', '.join(cities))
 
         c.close()
         db.close()
